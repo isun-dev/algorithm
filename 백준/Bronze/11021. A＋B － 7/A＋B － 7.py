@@ -1,6 +1,19 @@
-cases = int(input())
+import java.io.*;
+import java.util.StringTokenizer;
 
-for i in range(cases):
-    a,b = map(int, input().split())
-    ans = a + b
-    print("Case #%s: %s"%(i+1, ans ))
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int count = Integer.parseInt(br.readLine());
+        StringTokenizer st;
+        for (int i = 0; i < count; i++) {
+            st = new StringTokenizer(br.readLine(), " ");
+            bw.write("Case #" + (i + 1) + ": " + (Integer.parseInt(st.nextToken()) + Integer.parseInt(st.nextToken())) + "\n");
+        }
+        br.close();
+        bw.flush();
+        bw.close();
+    }
+}
