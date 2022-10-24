@@ -14,15 +14,13 @@ public class Main {
             char[] charArray = arr[i].toCharArray();
             for (int j = 0; j < charArray.length; j++) {
                 if (charArray[j] == 'X') {
-                    sum += 0;
                     repeatCount = 0;
                 } else if (charArray[j] == 'O') {
                     repeatCount++;
-                    sum += repeatCount;
                 }
+                sum += repeatCount;
             }
             System.out.println(sum);
         }
-
     }
 }
