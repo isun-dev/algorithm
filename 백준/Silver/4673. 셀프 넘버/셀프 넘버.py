@@ -1,24 +1,26 @@
-# 셀프 넘버
-# 양의 정수 n에 대해서 d(n)을 n과 n의 각 자리수를 더하는 함수라고 정의
-# 에 따라 함수를 정의한다.
+// 풀기전 참고: https://junghn.tistory.com/entry/%EC%9E%90%EB%B0%94-int%EB%A5%BC-%EC%9E%90%EB%A6%BF%EC%88%98%EB%B3%84-int-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EB%B6%84%ED%95%A0
+public class Main {
+    public static void main(String[] args) {
+        Boolean[] arr = new Boolean[10001];
 
-# set으로 중복되는 숫자 제거
+        for (int i = 1; i < 10001; i++) {
+            if (d(i) < 10001) {
+                arr[d(i)] = true;
+            }
+        }
+        for (int i = 1; i < 10001; i++) {
+            if (arr[i] == null) {
+                System.out.println(i);
+            }
+        }
+    }
 
-# 10000 이하까지 for 문을 돌리면서
-# s_set에 add 하고 차집합 기능을 이용해서 
-# 셀프넘버 출력 
-
-def d(n):
-    x = 0
-    a = list(str(n))
-    for i in a:
-        x = x + int(i)
-    return n + x
-
-
-s_set = set()
-for k in range(1, 10000):
-    s_set.add(d(k))
-result = set(range(1, 10000)) - s_set
-for num in sorted(result):
-    print(num)
+    public static int d(int n) {
+        int sum = n;
+        while (n != 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+        return sum;
+    }
+}
