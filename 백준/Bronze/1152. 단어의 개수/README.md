@@ -22,3 +22,5 @@
 
  <p>첫째 줄에 단어의 개수를 출력한다.</p>
 
+## 참고링크
+- https://jhnyang.tistory.com/398
