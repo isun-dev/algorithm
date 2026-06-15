@@ -106,3 +106,13 @@ face에 해당하는 의상이 crow_mask, blue_sunglasses, smoky_makeup이므로
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+
+# 풀이 과정
+1. HashMap에 종류(key)별 의상 개수(value)를 담는다
+2. 각 종류마다 (개수 + 1)을 곱한다 → +1은 "안 고르는 경우"
+3. 마지막에 -1을 한다 → -1은 "전부 안 고르는 경우" 제거
+
+# 수학적 부분
+- 서로 독립적인 선택이 여러 개면 → 곱하기
+- 안 고르는 경우도 선택지 → +1
+- 전부 안 고르는 경우는 불가능 → -1
